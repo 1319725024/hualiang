@@ -1,0 +1,1827 @@
+<!DOCTYPE html>
+<html>
+	<!-- <link type="text/css" id="dark-mode" rel="stylesheet" href="https://www.bencaojianyuan.cn/tracecode.php?action=DPT60757175508021000575"> -->
+	<style type="text/css" id="dark-mode-сustom-style"></style>
+	<style type="text/css" id="dark-mode-theme-changer-style"></style>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<title>追溯码查询</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">-->
+		
+		<meta name="applicable-device" content="mobile">
+		<link rel="stylesheet" href="./css/layui.css" />
+		<link rel="stylesheet" href="./css/m.css" />
+		<link rel="stylesheet" href="./css/swiper-bundle.min.css" />
+		<script src="js/layui.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/swiper-bundle.min.js"></script>
+		<script src="https://webapi.amap.com/maps?v=1.4.15&key=e07ffdf58c8e8672037bef0d6cae7d4a"></script>
+		<style id="market-mate-selection-bubble-font">
+			@font-face {
+				font-family: market-mate-iconfont;
+				src: url(data:font/woff;base64,d09GRgABAAAAAAawAAsAAAAACkwAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABHU1VCAAABCAAAADsAAABUIIslek9TLzIAAAFEAAAARAAAAGA8FkjXY21hcAAAAYgAAABfAAABovyZ0OZnbHlmAAAB6AAAAqUAAANQhOlcg2hlYWQAAASQAAAALwAAADYsWXFlaGhlYQAABMAAAAAcAAAAJAfeA4ZobXR4AAAE3AAAAA4AAAAUFAAAAGxvY2EAAATsAAAADAAAAAwBvAKsbWF4cAAABPgAAAAfAAAAIAEWAIRuYW1lAAAFGAAAAVgAAAL317GhgXBvc3QAAAZwAAAAQAAAAFJzPFE%2FeJxjYGRgYOBiMGCwY2BycfMJYeDLSSzJY5BiYGGAAJA8MpsxJzM9kYEDxgPKsYBpDiBmg4gCACY7BUgAeJxjYGFhYJzAwMrAwNTJdIaBgaEfQjO%2BZjBi5ACKMrAyM2AFAWmuKQwHnjE%2BY2du%2BN%2FAwMB8hwFIMjCiKGICAGMrDGh4nO2Q0Q2AIAwFrxQhIY7ihyM4iF8O3zWwtI7hS46mB%2BHjARugzuFUkAdh5XYr4ZURvnL63nwKxdT6nGCS0yN%2BN%2BK3eOGi8WeP8%2Fq2uhpLVutWkvCarNatJ5QXVtwRRgB4nE1SPW%2FTUBR91ybvxbFdJ9QfpYnrxiY2UhuHuKmDEvUjInRL01QdqYSg6ccGBYmhDF1YK9EFhNSCWrFUQogFFBjCDguqqrLyD7pUTDE8uwFxZV%2Bfe3TOk%2B99F11C6PdT9iO7hVLIQtfRFEKgKimZxLCTsydTpXLO12I5m9aU1WIqrSlL5AEwXShNgzcCpOSCOQDyCHjTwD6pVIJutRp0KxWoVauQDbrpdNAdHoZaOg214a9u83bTjdKsXqwU9Sgxr8x6sFM3OyZ96rAZobOOJHWSRrBjJC8QbBo%2F3L6ZfvW%2BWS8iQvs4ZrtsjXZRRTPoJlpGj9Bj2s1kyR4DE%2BtghUlWq6CEyfOnYCJMJdsqW6ZNgU9ZlUow1Ye1FVOsySx9QY2oAlhkAEJUHvRnwNdUjR7xv%2BPvCbkJB5Y4cpVwB3ImIx9E8CiEb3lOELhjY1yMq5zA9%2FZ24f5LZp2NE4Mk2NypxSbINUKYNyTJaEoy3nt43DcInBoXGX2%2FxZzNEo4jsxn5i5zZDuF2BJNUwQnjxnloOOcXXtPolbFAYostTAQMD5IcJPh4KvgscAonhkpRpMo77xFi6Py%2B0z1YRDryEMphgh0XHLs8DWVfGwFNJZhoqiwBNh225NiObVIGy3QIqlf2yz7zc3Gjfa%2B9OzSUybxYXWmv72WNQeXWIcYSSZGlQr6x0Flo5Av%2FwNacLI%2BO7q%2B1V9ae62ntyrPVu6sbrUN8GUsYw%2Blys%2BHSaDQ%2FNefzrpufbyIaLP3Pb%2BwH9gbSkIN8er8Xg5%2FIeuHaRhdB99O2YilZpaQfFVkTD4Z0KKMqWjMpXpJ4KBTrUkLkJUPtiZ7FjFmeZ%2FVOLG8OCxwzpii9E475JfFiQqoXg3eRpaUaR6GkL%2B8dYqrkBCpVEPoDs%2Bel1QAAAHicY2BkYGAA4jIejqx4fpuvDNwsDCDwZK7YFgT9v5WFgbkayOVgYAKJAgD9BQlLAHicY2BkYGBu%2BN%2FAEMPCAAJAkpEBFbACAEcLAm54nGNhYGBgQcMAAQQAFQAAAAAAAABkAQQBWAGoeJxjYGRgYGBlqGBgZwABJiDmAkIGhv9gPgMAFSoBmwB4nI2SzU7CQBSFz%2FBnhEQTNa5nhSSm5WdjwlIS2LPo1pQy5a%2FtNNOBhIcx8R18Gje%2BhC%2FgoYwbZEGbufnuuefezrQFcIdvCByve64jCzwwO3IFV3hyXKXuO66RXx3X0ULguEE9dNzEM7aOW5z4wQmids2sjU%2FHAh18Oa7gRgjHVXTEreMa%2BcVxHY%2FizXGD%2BtZxE4F4d9xCW%2FyMjAqtmsvZXq4incU6s2loNsp6KXXvT5uqxTYJzbnSOS1QpljpTPb93rnyRGXK%2FD222C0G1sYyNjqVY1ZVkmiZG71WkfWX1ubDbjd2uh%2FpFCMYKL4%2ByziHxAx7xhUiaGSIy2iR0mGwocfCK7OD3%2Fvnm1Jd8AMkpf%2FSrkt9AVWDgvohl%2Bjz1%2Bhd3D2hmpUTTk9bYMddD6hauiWXYU9KGrtexRMlZIm8rK2pRNR9LMuuHEN0eccnfr%2FcQ%2FoLJz6TTHicY2BigAAuBuyAlZGJkZmRhZGVkY2BP1G3OCO1KiMzuzQxKzMvnTUtMa8yk604v7S4NJ81rRQow8AAAAfrDTc%3D)
+			}
+
+			.market-mate-selection-bubble-font {
+				font-size: 14px;
+				font-style: normal;
+				font-family: market-mate-iconfont !important
+			}
+		</style>
+		<style>
+			.ai-operation:hover {
+				color: #ff480d;
+				/* No quotes around the color value */
+			}
+			 .map-wrapper {
+			            width: 576px;
+			            height: 150px;
+			            border-radius: 6px;
+			            overflow: hidden;
+			            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+									margin: 0 auto;
+			        }
+			        #mapContainer {
+			            width: 100%;
+			            height: 100%;
+			        }
+		</style>
+	</head>
+	<body>
+		<input id="10ydyt62x4wd" type="hidden" name="market-mate-for-1688" value="installed" data-version="1.0.14" data-package="chrome-store"
+			data-id="kphldkppgfpjadpabfkghmjbhpcmgpdg" data-content-script-message-host-web-app-channel-id="kphldkppgfpjadpabfkghmjbhpcmgpdg-content-script-message-with-host-web-app">
+		<div id="zjr">
+			<style>
+				.m_top {
+					/* height: 160px; */
+					width: 100%;
+					display: block;
+					object-fit:cover;
+				}
+
+				.m_b1 {
+					width: 94%;
+					box-shadow: 1px 2px 8px rgba(51, 159, 249, 0.1);
+					margin: 0 auto;
+					background: #FFF;
+					border: #fefefe 1px solid;
+					margin-top: -50px;
+					border-radius: 10px;
+				}
+
+				.m_b {
+					width: 100%;
+					margin: 0 auto;
+					margin-top: 10px;
+					border-radius: 10px;
+				}
+
+				/* border: #fefefe 1px solid;background: #FFF; box-shadow: 1px 2px 8px rgba(51,159,249,0.1);*/
+				.m_body {
+					width: 94%;
+					margin: 0 auto;
+					margin-top: 10px;
+					margin-bottom: 10px;
+				}
+
+				.m_t {
+					width: 96%;
+					border-radius: 25px;
+					margin: 20px auto;
+					height: 60px;
+					line-height: 60px;
+					color: #444;
+					font-size: 18px;
+					font-weight: bold;
+					background: #fff;
+					box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.1);
+					margin-bottom: 20px;
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					cursor: pointer;
+					padding: 0 20px;
+					box-sizing: border-box;
+				}
+
+				.m_t img {
+					margin-right: 10px;
+					vertical-align: middle;
+				}
+
+				.m_t .text-wrapper {
+					display: flex;
+					align-items: center;
+					flex-grow: 1;
+				}
+
+				.m_t .bracket {
+					margin-left: 10px;
+				}
+
+				.xz {
+					-webkit-transform: rotate(90deg);
+					-ms-transform: rotate(90deg);
+					transform: rotate(90deg);
+				}
+
+
+				.m_ts {
+					width: 96%;
+					border-radius: 25px;
+					margin: 20px auto;
+					height: 60px;
+					line-height: 60px;
+					color: #444;
+					font-size: 18px;
+					font-weight: bold;
+					background: #fff;
+					box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.1);
+					margin-bottom: 20px;
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					cursor: pointer;
+					padding: 0 20px;
+					box-sizing: border-box;
+				}
+
+				.m_ts img {
+					margin-right: 10px;
+					vertical-align: middle;
+				}
+
+				.m_ts .text-wrapper {
+					display: flex;
+					align-items: center;
+					flex-grow: 1;
+				}
+
+				.m_ts .bracket {
+					margin-left: 10px;
+				}
+
+				.m_bot {
+					width: 80%;
+					text-align: center;
+					border-radius: 5px;
+					margin: 20px auto;
+					height: 25px;
+					line-height: 25px;
+					color: #333;
+					margin-bottom: 20px;
+				}
+
+				.m_t_l {
+					width: 94%;
+					text-align: left;
+					margin: 20px auto;
+					height: 30px;
+					line-height: 30px;
+					margin-bottom: 20px;
+					font-weight: bold;
+					font-size: 18px;
+				}
+
+				.base-info {
+					font-family: '微软雅黑', Arial, sans-serif;
+					line-height: 40px;
+					color: #777;
+					max-width: 600px;
+					margin: 20px auto;
+					font-size: 16px;
+					overflow: hidden;
+					/* 清除浮动 */
+				}
+
+				.base-info-div {
+					border-bottom: #dfdfdf 1px dashed;
+					min-height: 40px;
+					/* 关键：改为min-height */
+					width: 90%;
+					margin-left: 5%;
+					position: relative;
+					/* 为绝对定位做准备 */
+				}
+
+				.base-info dt {
+					float: left;
+					width: 100px;
+					text-align: right;
+					/* dt文字右对齐 */
+					margin-right: 10px;
+					padding-bottom: 10px;
+					height: 100%;
+					/* 继承父级高度 */
+				}
+
+				.base-info dd {
+					text-align: right;
+					/* 确保dd文字右对齐 */
+					margin-right: 20px;
+					padding-bottom: 10px;
+					word-break: break-word;
+					/* 允许换行 */
+					overflow: hidden;
+					margin-left: 110px;
+					/* 100px(dt宽度) + 10px(margin) */
+					display: block;
+				}
+
+
+				.base-con {
+					font-family: '微软雅黑';
+					font-family: Arial, sans-serif;
+					line-height: 32px;
+					color: #777;
+					max-width: 640px;
+					width: 86%;
+					margin: 20px auto;
+					font-size: 18px;
+				}
+
+				.base-con img {
+					max-width: 100%;
+				}
+
+				.certificate-container {
+					position: relative;
+					width: 96%;
+					max-width: 640px;
+					margin: 0 auto;
+					background: #fff;
+					border-radius: 8px;
+					overflow: hidden;
+				}
+
+				/*box-shadow: 0 2px 10px rgba(0,0,0,1);*/
+				.certificate-content {
+					box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.1);
+					border-radius: 10px;
+					margin: 0 auto;
+					margin-top: 10px;
+					margin-bottom: 10px;
+					width: 97%;
+				}
+
+				/* box-shadow: 1px 2px 8px rgba(0,0,0,0.1);*/
+
+				.certificate-tabs {
+					display: flex;
+					justify-content: space-between;
+					gap: 8px;
+					/* 添加间距 */
+					padding: 0 8px;
+					/* 两侧留白 */
+				}
+
+				.certificate-tabs .tab {
+					border-radius: 10px;
+					background: #efefef;
+					flex: 1;
+					padding: 12px 0;
+					text-align: center;
+					font-size: 18px;
+					color: #666;
+					cursor: pointer;
+					transition: all 0.3s;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					margin: 4px 0;
+					/* 上下间距 */
+				}
+
+				.certificate-tabs .tab.active {
+					color: #fff;
+					background: #247ef6;
+				}
+
+				.conshadow {
+					border-radius: 10px;
+					margin: 0 auto;
+					margin-top: 10px;
+					margin-bottom: 10px;
+					width: 92%;
+				}
+
+				/*box-shadow: 1px 2px 8px rgba(0,0,0,0.1);*/
+
+
+				.swiper-container {
+					width: 100%;
+					height: auto;
+					position: relative;
+					padding: 0;
+					box-sizing: border-box;
+					background: #fff;
+					overflow: hidden;
+				}
+
+				.swiper-wrapper {
+					width: 100%;
+					display: flex;
+					transition-property: transform;
+					box-sizing: content-box;
+				}
+
+				.swiper-button-prev,
+				.swiper-button-next {
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					width: 30px;
+					height: 30px;
+					margin: 0;
+					z-index: 10;
+					cursor: pointer;
+					background: rgba(255, 255, 255, 0.9);
+					border-radius: 50%;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+				}
+
+				.swiper-button-prev {
+					left: 10px;
+				}
+
+				.swiper-button-next {
+					right: 10px;
+				}
+
+				.swiper-button-prev:after,
+				.swiper-button-next:after {
+					font-size: 16px;
+					color: #333;
+					font-weight: bold;
+				}
+
+				.swiper-slide {
+					width: 100%;
+					flex-shrink: 0;
+					padding: 10px;
+					box-sizing: border-box;
+					margin-right: 0 !important;
+					text-align: center;
+				}
+
+				.swiper200 {
+					max-height: 150px;
+					height: auto;
+					overflow: hidden !important;
+				}
+
+				.swiper200 {
+					height: 150px !important;
+					min-height: 150px !important;
+					max-height: 150px !important;
+					overflow: hidden !important;
+					position: relative;
+					display: flex !important;
+					align-items: center;
+					justify-content: center;
+				}
+
+				.swiper200 img {
+					width: 100% !important;
+					height: 100% !important;
+					object-fit: cover !important;
+					object-position: center !important;
+					flex-shrink: 0;
+					display: block;
+
+				}
+
+				/*border-radius: 10px;*/
+				.swiper300 {
+					max-height: 300px;
+					height: auto;
+					overflow: hidden !important;
+				}
+
+				/* 限制高度为 400px 的容器 */
+				.swiper400 {
+					max-height: 400px;
+					height: 400px;
+					/* 固定高度 */
+					overflow: hidden;
+					display: flex;
+					/* 使图片居中 */
+					align-items: center;
+					/* 垂直居中 */
+					justify-content: center;
+					/* 水平居中 */
+					background: #f5f5f5;
+					/* 可选：背景色填充空白 */
+				}
+
+				/* 图片样式 */
+				.image-thumb {
+					max-width: 100%;
+					max-height: 100%;
+					width: auto;
+					height: auto;
+					/* object-fit: contain;保持比例，不拉伸 */
+					border-radius: 10px;
+					/* 可选：圆角 */
+					object-fit: cover;
+				}
+
+
+				.tab-panel {
+					display: none;
+					padding: 10px;
+				}
+
+				.tab-panel.active {
+					display: block;
+				}
+
+				.section-title {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					width: 100%;
+					margin: 20px auto;
+					position: relative;
+					font-size: 18px;
+					color: #333;
+					padding: 10px 0;
+					text-align: center;
+				}
+
+				.section-title:before {
+					content: "";
+					position: relative;
+					flex: 1;
+					height: 4px;
+					max-width: 150px;
+					margin: 0 10px;
+					background: linear-gradient(90deg, transparent, #247ef6);
+				}
+
+				.section-title:after {
+					content: "";
+					position: relative;
+					flex: 1;
+					height: 4px;
+					max-width: 150px;
+					margin: 0 10px;
+					background: linear-gradient(90deg, #247ef6, transparent);
+				}
+
+				@media(max-width:100%) {
+					.swiper-container {
+						padding: 0;
+					}
+
+					.swiper-button-prev,
+					.swiper-button-next {
+						width: 25px;
+						height: 25px;
+					}
+
+					.certificate-tabs .tab {
+						font-size: 12px;
+						padding: 8px 2px;
+					}
+
+					.section-title {
+						font-size: 16px;
+						margin: 15px 0;
+						padding: 10px 20px;
+						display: flex;
+						flex-wrap: nowrap;
+					}
+
+					.section-title:before,
+					.section-title:after {
+						flex: 1;
+						min-width: 30px;
+						max-width: 60px;
+						margin: 0 8px;
+					}
+
+					.section-title:before {
+						background: linear-gradient(90deg, transparent, #247ef6);
+					}
+
+					.section-title:after {
+						background: linear-gradient(90deg, #247ef6, transparent);
+					}
+				}
+
+
+				.content-wrapper {
+					position: relative;
+				}
+
+				.content-collapse {
+					overflow: hidden;
+					position: relative;
+					transition: max-height 0.3s ease;
+				}
+
+				.fade-out {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					height: 60px;
+					background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+				}
+
+				.expand-toggle {
+					display: block;
+					width: 100%;
+					background: none;
+					border: none;
+					color: #1890ff;
+					cursor: pointer;
+					padding: 10px 0;
+					text-align: center;
+				}
+
+				.content img {
+					max-width: 90%;
+				}
+
+				.content-collapse.expanded {
+					max-height: none;
+				}
+
+				.content-collapse.expanded .fade-out {
+					display: none;
+				}
+			</style>
+			<img class="m_top" src="./img/uploads/banner.jpg" />
+			<div
+				style="display:flex;align-items:center;justify-content:center;width:60%;margin:20px auto;position:relative;font-size:18px;color:#fff;padding:10px 0;text-align:center; background:#247ef6; border-radius:10px;">
+				款冬花</div>
+			<div class="m_b">
+				<p class="m_t">
+					<span class="text-wrapper">
+						<img src="./img/images/jdxx.png" width="45" height="45" alt="" />
+						种植基地
+					</span>
+					<span class="bracket xz">&rangle;</span>
+				</p>
+
+				<div class="content" style="display:;">
+					<dl class="base-info">
+						<div class='base-info-div'>
+							<dt>基地名称：</dt>
+							<dd>和政县和平中药材种植销售农民专业合作社</dd>
+						</div>
+						<!-- <div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>追溯码：</dt>
+							<dd>-</dd>
+						</div> -->
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>基地面积：</dt>
+							<dd>150亩</dd>
+						</div>
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>建设模式：</dt>
+							<dd>共建</dd>
+						</div>
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>地理位置：</dt>
+							<dd>甘肃省临夏回族自治州和政县城关镇西关村康家坪新村</dd>
+						</div>
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>气候类型：</dt>
+							<dd>北温带大陆性气候</dd>
+						</div>
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>土壤类型：</dt>
+							<dd>垆土</dd>
+						</div>
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>年降水量：</dt>
+							<dd>639mm</dd>
+						</div>
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>年平均温度：</dt>
+							<dd>6.1℃</dd>
+						</div>
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>经度：</dt>
+							<dd>103.36</dd>
+						</div>
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>纬度：</dt>
+							<dd>35.43</dd>
+						</div>
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>海拔：</dt>
+							<dd>2182米</dd>
+						</div>
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>土壤PH值：</dt>
+							<dd>8.2</dd>
+						</div>
+						<div style='clear:both'></div>
+					</dl>
+
+
+					<div>
+						<div class="map-wrapper">
+							<div id="mapContainer"></div>
+						</div>
+
+					<!-- 	<iframe width="90%" height="150" scrolling="no" src="https://www.bencaojianyuan.cn/map.php?jd=127.280324&wd=49.429890"
+							style="overflow: hidden; margin: 0 auto; display: block; border: none;" allow="geolocation *"></iframe> -->
+
+					</div>
+					<div></div><!--气象设备-->
+
+
+
+
+					<!-- <div class="section-title">
+						<span class="section-title-text">相关资质</span>
+					</div> -->
+					<!-- <div class="certificate-container">
+						<div class="certificate-tabs">
+							<div class="tab active" data-tab="land">土地资质</div>
+						</div>
+
+						<div class="certificate-content" style="width: 76%;">
+							<div class="tab-panel active" id="land">
+								<div class="swiper-container">
+									<div class="swiper-button-prev"></div>
+									<div class="swiper-wrapper">
+										<div class="swiper-slide swiper200"><img class="image-thumb" src="./img/uploads/20250817170928_71f9b1a361cd36e91db0cbd92e38d4e4.png"
+												alt="土地资质"></div>
+										<div class="swiper-slide swiper200"><img class="image-thumb" src="./img/uploads/20250817170931_b7b612cb93279d60d74f03f705c26589.png"
+												alt="土地资质"></div>
+										<div class="swiper-slide swiper200"><img class="image-thumb" src="./img/uploads/20250817170933_ce3d9de34ec6914fb6eba3147e4891d7.png"
+												alt="土地资质"></div>
+									</div>
+									<div class="swiper-button-prev"></div>
+									<div class="swiper-button-next"></div>
+								</div>
+							</div>
+
+
+
+						</div>
+
+					</div> -->
+
+				</div>
+			</div>
+
+			<div class="m_b">
+				<p class="m_t">
+					<span class="text-wrapper">
+						<img src="./img/images/zyxx.png" width="45" height="45" alt="" />
+						种源信息
+					</span>
+					<span class="bracket">&rangle;</span>
+				</p>
+
+				<div class="content" style="display:none;">
+					<dl class="base-info">
+						<div class='base-info-div'>
+							<dt>批号：</dt>
+							<dd>ZMJ20251114</dd>
+						</div>
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>种苗来源：</dt>
+							<dd>自培育</dd>
+						</div>
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>种源数量：</dt>
+							<dd>5425公斤</dd>
+						</div>
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>供应商：</dt>
+							<dd>甘肃泓泰药业有限公司</dd>
+						</div>
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>负责人：</dt>
+							<dd>李翠芝 </dd>
+						</div>
+						<div style='clear:both'></div>
+					</dl>
+					<div class="section-title">
+						<span class="section-title-text">相关资质</span>
+					</div>
+					<div class="certificate-container">
+						<!-- 选项卡导航 -->
+						<div class="certificate-tabs">
+							<div class="tab active" data-tab="zy_zyzp">种源图片</div>
+						</div>
+
+						<!-- 图片展示区 -->
+						<div class="certificate-content" style="width: 76%;">
+							<!-- 土地资质 -->
+							<div class="tab-panel active" id="zy_zyzp">
+								<div class="swiper-container">
+									<div class="swiper-button-prev"></div>
+									<div class="swiper-wrapper">
+										<div class="swiper-slide swiper200"><img src="./img/uploads/1.jpg"></div>
+									</div>
+									<div class="swiper-button-prev"></div>
+									<div class="swiper-button-next"></div>
+								</div>
+							</div>
+
+
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+			<div class="m_b">
+				<p class="m_ts">
+					<span class="text-wrapper">
+						<img src="./img/images/zzxx.png" width="45" height="45" alt="" />
+						种植信息
+					</span>
+					<span class="bracket">&rangle;</span>
+				</p>
+
+
+				<div class="content-wrapper" style="display: none;">
+					<div class="content-collapse" style="max-height: 300px;">
+						<div class="content">
+
+							<dl class="base-info">
+								<div class='base-info-div'>
+									<dt>种植品名：</dt>
+									<dd>款冬花</dd>
+								</div>
+								<div style='clear:both'></div>
+								<div class='base-info-div'>
+									<dt>种植批号：</dt>
+									<dd>ZMJ20251011</dd>
+								</div>
+								<div style='clear:both'></div>
+								<div class='base-info-div'>
+									<dt>生长周期：</dt>
+									<dd>10个月</dd>
+								</div>
+								<div style='clear:both'></div>
+								<div class='base-info-div'>
+									<dt>种植面积：</dt>
+									<dd>150亩</dd>
+								</div>
+								<div style='clear:both'></div>
+								<div class='base-info-div'>
+									<dt>种植方式：</dt>
+									<dd>人工种植</dd>
+								</div>
+								<div style='clear:both'></div>
+								<div class='base-info-div'>
+									<dt>种植日期：</dt>
+									<dd>2025-02-06 至 2025-12-06</dd>
+								</div>
+								<div style='clear:both'></div>
+							</dl>
+
+
+							<style>
+								.z_bgbox {
+									width: 94%;
+									margin: 0 auto;
+									background: url('images/pointline.png') top left no-repeat;
+								}
+
+								.z_bgbox_con {
+									width: 85%;
+									margin: 0 auto;
+								}
+							</style>
+
+
+							<!--农事过程-->
+							<div class="section-title">
+								<span class="section-title-text"><b>款冬花种植过程</b></span>
+							</div>
+							<div class="z_bgbox">
+								<div class="z_bgbox_con">
+									<p style="width: 100%;font-size: 18px; color: #247ef6; height: 50px; line-height: 25px; font-weight: bold; text-align: left;">手工播种</p>
+									<div style="width: 100%: font-size:14px; font-weight: bold; height: 40px; line-height: 20px;">
+										<div style="float: left;">2025-02-06 至 2025-12-06</div>
+										<div style="float: right;">操作人：
+											李翠芝 </div>
+									</div>
+								</div>
+								<div style="clear: both;"></div>
+
+								<div class="tab-panel active conshadow" style="width: 85%; margin-top:-10px;" id="nsgc_pic_216">
+									<div class="swiper-container">
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-wrapper">
+											<div class="swiper-slide swiper200"><img src="./img/uploads/2.jpg"></div>
+											<div class="swiper-slide swiper200"><img src="./img/uploads/3.jpg"></div>
+										</div>
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-button-next"></div>
+									</div>
+								</div>
+
+							</div>
+							<div class="z_bgbox">
+								<div class="z_bgbox_con">
+									<p style="width: 100%;font-size: 18px; color: #247ef6; height: 50px; line-height: 25px; font-weight: bold; text-align: left;">采挖</p>
+									<div style="width: 100%: font-size:14px; font-weight: bold; height: 40px; line-height: 20px;">
+										<div style="float: left;">2025-11-10 至 2025-12-06</div>
+										<div style="float: right;">操作人：
+											李翠芝 </div>
+									</div>
+								</div>
+								<div style="clear: both;"></div>
+
+								<div class="tab-panel active conshadow" style="width: 85%; margin-top:-10px;" id="nsgc_pic_217">
+									<div class="swiper-container">
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-wrapper">
+											<div class="swiper-slide swiper200"><img src="./img/uploads/7.jpg"></div>
+										</div>
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-button-next"></div>
+									</div>
+								</div>
+
+							</div>
+						<!-- 	<div class="z_bgbox">
+								<div class="z_bgbox_con">
+									<p style="width: 100%;font-size: 18px; color: #247ef6; height: 50px; line-height: 25px; font-weight: bold; text-align: left;">浇水</p>
+									<div style="width: 100%: font-size:14px; font-weight: bold; height: 40px; line-height: 20px;">
+										<div style="float: left;">2022-12-08 至 2022-12-12</div>
+										<div style="float: right;">操作人：
+											王志伟 </div>
+									</div>
+								</div>
+								<div style="clear: both;"></div>
+
+								<div class="tab-panel active conshadow" style="width: 85%; margin-top:-10px;" id="nsgc_pic_218">
+									<div class="swiper-container">
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-wrapper">
+											<div class="swiper-slide swiper200"><img src="./img/uploads/20250813181812_b428c666ad967183c485049ac4a6c5e8.jpg"></div>
+										</div>
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-button-next"></div>
+									</div>
+								</div>
+
+							</div> -->
+							<!-- <div class="z_bgbox">
+								<div class="z_bgbox_con">
+									<p style="width: 100%;font-size: 18px; color: #247ef6; height: 50px; line-height: 25px; font-weight: bold; text-align: left;">日常除草</p>
+									<div style="width: 100%: font-size:14px; font-weight: bold; height: 40px; line-height: 20px;">
+										<div style="float: left;">2023-03-08 至 2023-03-11</div>
+										<div style="float: right;">操作人：
+											王志伟 </div>
+									</div>
+								</div>
+								<div style="clear: both;"></div>
+
+								<div class="tab-panel active conshadow" style="width: 85%; margin-top:-10px;" id="nsgc_pic_219">
+									<div class="swiper-container">
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-wrapper">
+											<div class="swiper-slide swiper200"><img src="./img/uploads/20250813181840_57098f6200e76fc54ad702826ae9bac3.jpg"></div>
+										</div>
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-button-next"></div>
+									</div>
+								</div>
+
+							</div> -->
+							<!-- <div class="z_bgbox">
+								<div class="z_bgbox_con">
+									<p style="width: 100%;font-size: 18px; color: #247ef6; height: 50px; line-height: 25px; font-weight: bold; text-align: left;">施肥</p>
+									<div style="width: 100%: font-size:14px; font-weight: bold; height: 40px; line-height: 20px;">
+										<div style="float: left;">2023-04-08 至 2023-04-11</div>
+										<div style="float: right;">操作人：
+											王志伟 </div>
+									</div>
+								</div>
+								<div style="clear: both;"></div>
+
+								<div class="tab-panel active conshadow" style="width: 85%; margin-top:-10px;" id="nsgc_pic_220">
+									<div class="swiper-container">
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-wrapper">
+											<div class="swiper-slide swiper200"><img src="./img/uploads/20250813181905_660b3ded07593cb7b0f8437c0ff314e9.jpg"></div>
+										</div>
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-button-next"></div>
+									</div>
+								</div>
+
+							</div> -->
+							<!--农事过程-->
+
+
+							<!--生长记录-->
+							<div class="section-title">
+								<span class="section-title-text"><b>生长记录</b></span>
+							</div>
+
+							<div class="z_bgbox">
+								<div class="z_bgbox_con">
+									<p style="width: 100%;font-size: 18px; color: #247ef6; height: 50px; line-height: 25px; font-weight: bold;">2025-05-05</p>
+								</div>
+
+								<div class="tab-panel active conshadow" style="width: 85%; margin-top:-10px;" id="szjl_pic_159">
+									<div class="swiper-container">
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-wrapper">
+											<div class="swiper-slide swiper200"><img src="./img/uploads/5.jpg"></div>
+										</div>
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-button-next"></div>
+									</div>
+								</div>
+
+
+							</div>
+							<div class="z_bgbox">
+								<div class="z_bgbox_con">
+									<p style="width: 100%;font-size: 18px; color: #247ef6; height: 50px; line-height: 25px; font-weight: bold;">2025-09-12</p>
+								</div>
+
+								<div class="tab-panel active conshadow" style="width: 85%; margin-top:-10px;" id="szjl_pic_159">
+									<div class="swiper-container">
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-wrapper">
+											<div class="swiper-slide swiper200"><img src="./img/uploads/6.jpg"></div>
+										</div>
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-button-next"></div>
+									</div>
+								</div>
+
+
+							</div>
+							<!-- <div class="z_bgbox">
+								<div class="z_bgbox_con">
+									<p style="width: 100%;font-size: 18px; color: #247ef6; height: 50px; line-height: 25px; font-weight: bold;">2023-08-02</p>
+									<div style="width: 100%; height: 30px; line-height: 30px; font-size: 14px;font-weight: bold;">生长记录：生长期</div>
+									<div style="width: 100%; height: 30px; line-height: 30px; font-size: 14px;font-weight: bold;">鉴&nbsp;定&nbsp;人：
+										王志伟 </div>
+									<div style="width: 100%; height: 30px; line-height: 30px; font-size: 14px;font-weight: bold;">鉴定机构：本机构</div>
+								</div>
+
+								<div class="tab-panel active conshadow" style="width: 85%; margin-top:-10px;" id="szjl_pic_160">
+									<div class="swiper-container">
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-wrapper">
+											<div class="swiper-slide swiper200"><img src="./img/uploads/20250813181944_5674976b703d2e593c0e84d8b5386a33.jpg"></div>
+										</div>
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-button-next"></div>
+									</div>
+								</div>
+
+
+							</div> -->
+						<!-- 	<div class="z_bgbox">
+								<div class="z_bgbox_con">
+									<p style="width: 100%;font-size: 18px; color: #247ef6; height: 50px; line-height: 25px; font-weight: bold;">2024-08-15</p>
+									<div style="width: 100%; height: 30px; line-height: 30px; font-size: 14px;font-weight: bold;">生长记录：成熟期</div>
+									<div style="width: 100%; height: 30px; line-height: 30px; font-size: 14px;font-weight: bold;">鉴&nbsp;定&nbsp;人：
+										王志伟 </div>
+									<div style="width: 100%; height: 30px; line-height: 30px; font-size: 14px;font-weight: bold;">鉴定机构：本机构</div>
+								</div>
+
+								<div class="tab-panel active conshadow" style="width: 85%; margin-top:-10px;" id="szjl_pic_161">
+									<div class="swiper-container">
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-wrapper">
+											<div class="swiper-slide swiper200"><img src="./img/uploads/20250813181959_acd0e5586ddd0966939becdb0c280472.jpg"></div>
+										</div>
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-button-next"></div>
+									</div>
+								</div>
+
+
+							</div> -->
+
+						</div>
+						<!-- <div class="fade-out"></div> -->
+					</div>
+					<!--生长记录-->
+					<!--style="display:none; background: url('images/pointline.png') top left no-repeat;"-->
+					<!--content-->
+					<button class="expand-toggle">展开查看更多 ↓</button>
+				</div>
+			</div><!--m_b-->
+
+
+
+			<div class="m_b">
+				<p class="m_t">
+					<span class="text-wrapper"><img src="./img/images/csxx.png" width="45" height="45" alt="" />采收信息</span>
+					<span class="bracket">&rangle;</span>
+				</p>
+				<div class="content" style="display:none; width: 95%; margin: 0 auto;">
+
+					<dl class="base-info">
+
+						<div class='base-info-div'>
+							<dt>采收批号:</dt>
+							<dd>ZMJ20251206789</dd>
+						</div>
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>采收时间:</dt>
+							<dd>2025-11-10 至 2025-12-06</dd>
+						</div>
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>采收方式:</dt>
+							<dd>
+
+								人工采收
+							</dd>
+						</div>
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>采收部位:</dt>
+							<dd>
+
+								根部
+							</dd>
+						</div>
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>包装材质:</dt>
+							<dd>
+
+								编织袋
+							</dd>
+						</div>
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>采收年限:</dt>
+							<dd>10个月</dd>
+						</div>
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>采收面积:</dt>
+							<dd>150亩</dd>
+						</div>
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>采收数量:</dt>
+							<dd>75000公斤</dd>
+						</div>
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>负责人:</dt>
+							<dd>
+
+								李翠芝
+							</dd>
+						</div>
+						<div style='clear:both'></div>
+
+					</dl>
+					<div class="tab-panel active" id="csxx_pic_57">
+						<div class="swiper-container">
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-wrapper">
+								<div class="swiper-slide swiper200"><img src="./img/uploads/8.jpg"></div>
+								<div class="swiper-slide swiper200"><img src="./img/uploads/9.jpg"></div>
+							</div>
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-button-next"></div>
+						</div>
+					</div>
+
+
+
+				</div>
+			</div>
+			<!--<div class="m_b">
+			    <p class="m_t">
+			        <span class="text-wrapper">
+			            <img src="./img/images/ccxx.png" width="45" height="45" alt=""/>
+			            采收仓储
+			        </span>
+			        <span class="bracket">&gt;</span>
+			    </p>
+			    <div class="content" style="display:none;">
+					
+				</div>
+			</div>-->
+			<div class="m_b">
+				<p class="m_t">
+					<span class="text-wrapper"><img src="./img/images/jgxx.png" width="45" height="45" alt="" />初加工</span>
+					<span class="bracket">&rangle;</span>
+				</p>
+				<div class="content" style="display:none;">
+
+
+					<dl class="base-info">
+						<div class='base-info-div'>
+							<dt>加工批号:</dt>
+							<dd>
+								ZMJ2025101678
+							</dd>
+						</div>
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>加工时间:</dt>
+							<dd>2025-11-13 至 2025-12-13</dd>
+						</div>
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>加工流程:</dt>
+							<dd>去杂筛选-烘干</dd>
+						</div>
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>加工数量:</dt>
+							<dd>75000公斤</dd>
+						</div>
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>加工产量:</dt>
+							<dd>30000公斤</dd>
+						</div>
+						<div style='clear:both'></div>
+					</dl>
+
+
+
+					<div class="z_bgbox" style="width:90%;">
+						<div class="z_bgbox_con">
+							<p style="width: 100%;font-size: 18px; color: #247ef6; height: 50px; line-height: 25px; font-weight: bold; text-align: left;">去杂筛选</p>
+							<!-- <div style="width: 90%: font-size:14px; font-weight: bold; height: 30px; line-height: 20px; margin-left:5%;">
+								<div style="float: left; width:49%; text-align:left;">2024-10-24</div>
+								<div style="float: right; width:49%; text-align:right;">操作人：王志伟</div>
+							</div> -->
+						</div>
+						<div style="clear: both;"></div>
+
+						<div class="tab-panel active conshadow" style="margin-top:-20px;" id="glgx_pic_217">
+							<div class="swiper-container">
+								<div class="swiper-button-prev"></div>
+								<div class="swiper-wrapper">
+									<div class="swiper-slide swiper200"><img src="./img/uploads/10.jpg"></div>
+									<div class="swiper-slide swiper200"><img src="./img/uploads/11.jpg"></div>
+									<div class="swiper-slide swiper200"><img src="./img/uploads/12.jpg"></div>
+								</div>
+								<div class="swiper-button-prev"></div>
+								<div class="swiper-button-next"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="z_bgbox" style="width:90%;">
+						<div class="z_bgbox_con">
+							<p style="width: 100%;font-size: 18px; color: #247ef6; height: 50px; line-height: 25px; font-weight: bold; text-align: left;">烘干</p>
+						<!-- 	<div style="width: 90%: font-size:14px; font-weight: bold; height: 30px; line-height: 20px; margin-left:5%;">
+								<div style="float: left; width:49%; text-align:left;">2024-10-28</div>
+								<div style="float: right; width:49%; text-align:right;">操作人：王志伟</div>
+							</div> -->
+						</div>
+						<div style="clear: both;"></div>
+
+						<div class="tab-panel active conshadow" style="margin-top:-20px;" id="glgx_pic_218">
+							<div class="swiper-container">
+								<div class="swiper-button-prev"></div>
+								<div class="swiper-wrapper">
+									
+									<div class="swiper-slide swiper200">
+										<video width="320" height="240" controls>
+										    <source src="./img/uploads/1.mp4" type="video/mp4">
+										    您的浏览器不支持 video 标签。
+										</video>
+									</div>
+									<div class="swiper-slide swiper200"><video src="./img/uploads/2.mp4"></video></div>
+									<div class="swiper-slide swiper200"><video src="./img/uploads/3	.mp4"></video></div>
+								</div>
+								<div class="swiper-button-prev"></div>
+								<div class="swiper-button-next"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="m_b">
+				<p class="m_t">
+					<span class="text-wrapper"><img src="./img/images/ccxx.png" width="45" height="45" alt="" />仓储信息</span>
+					<span class="bracket">&rangle;</span>
+				</p>
+				<div class="content" style="display:none;">
+
+					<dl class="base-info">
+						<div class='base-info-div'>
+							<dt>存储批号:</dt>
+							<dd>ZMJ202510112356</dd>
+						</div>
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>仓库名称:</dt>
+							<dd>款冬花仓库</dd>
+						</div>
+						
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>仓储条件:</dt>
+							<dd>阴凉库</dd>
+						</div>
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>储存数量:</dt>
+							<dd>30000公斤</dd>
+						</div>
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>包装规格:</dt>
+							<dd>25公斤/件</dd>
+						</div>
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>入库时间:</dt>
+							<dd>2025-11-13 到 2025-12-13</dd>
+						</div>
+						<div style='clear:both'></div>
+						<div class='base-info-div'>
+							<dt>负责人:</dt>
+							<dd>
+
+								李翠芝
+							</dd>
+						</div>
+						<div style='clear:both'></div>
+					</dl>
+
+
+
+
+
+					<div class="section-title">
+						<span class="section-title-text">相关资质</span>
+					</div>
+					<div class="certificate-container">
+						<!-- 选项卡导航 -->
+						<div class="certificate-tabs">
+							<div class="tab active" data-tab="cc_cktp55">仓库图片</div>
+						</div>
+
+						<!-- 图片展示区 -->
+						<div class="certificate-content">
+							<!-- 土质资质 -->
+							<div class="tab-panel active" id="cc_cktp55">
+								<div class="swiper-container">
+									<div class="swiper-button-prev"></div>
+									<div class="swiper-wrapper">
+										<div class="swiper-slide swiper200"><img src="./img/uploads/13.jpg"></div>
+										<div class="swiper-slide swiper200"><img src="./img/uploads/14.jpg"></div>
+									</div>
+									<div class="swiper-button-prev"></div>
+									<div class="swiper-button-next"></div>
+								</div>
+							</div>
+
+
+
+
+						</div>
+					</div>
+
+
+
+				</div>
+			</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<div class="m_b">
+				<p class="m_t">
+					<span class="text-wrapper"><img src="./img/images/zlxx.png" width="45" height="45" alt="" />道地考证</span>
+					<span class="bracket">&rangle;</span>
+				</p>
+				<div class="content" style="display:none;">
+
+					<div class="base-con">
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							本基地位于甘肃省临夏回族自治州和政县城关镇，结合《和政县志》《甘肃中药志》及地方农业科研资料记载，款冬花为当地传统道地中药材，核心产区聚焦城关镇及周边山地、河谷区域，适配垆土（pH 8.0～8.4）与北温带大陆性高原气候（年均温 5-6.1℃、年降水量 639mm），生长期 1-2 年，有效成分款冬酮含量符合道地药材标准，“花蕾肥壮、色紫褐、香气浓郁” 的性状与古今文献记载一致，为道地核心标识。相关记载及考据如下：
+						</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							《和政县志》（现代编撰）：“县内野生及人工种植药材涵盖款冬花等品种，城关镇西关村、麻藏村等区域因山地阴湿、土壤疏松，为款冬花适宜生长区，所产花蕾饱满、品质上乘，是当地传统优势药材之一。”</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							考据：明确和政县城关镇为款冬花的传统适宜产区，佐证其道地种植的历史基础与区域适配性。
+						</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							《甘肃中药志》（现代・甘肃省药品监督管理局编撰）：“甘肃临夏州和政县产款冬花，花蕾呈长圆棒状，单生或 2-3 个基部连生，表面紫褐色或灰棕色，密被茸毛，气清香、味微苦辛，为陇东南道地款冬花主产区之一。”
+						</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							考据：现代权威药学著作界定和政县款冬花的道地性状特征，确认其区域品质认可度。
+						</p>	
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							《中药材栽培与质量控制》（现代・临夏州农科院编撰）：“和政县高海拔、温凉湿润的气候及垆土透气保肥特性，契合款冬花‘喜凉爽湿润、忌高温干旱’的生长习性，所产款冬花茸毛完整、有效成分积累充分，品质优于平原产区。”
+						</p>	
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+						考据：从生长习性适配性与成分积累角度，印证款冬花在和政县城关镇的道地属性。
+						</p>
+					</div>
+
+
+				</div>
+			</div>
+
+			<div class="m_b">
+				<p class="m_t">
+					<span class="text-wrapper"><img src="./img/images/qyxx.png" width="45" height="45" alt="" />基地介绍</span>
+					<span class="bracket">&rangle;</span>
+				</p>
+				<div class="content" style="display:none;">
+
+					<div class="base-con">
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							一、基地概况
+						</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							基地位于甘肃省临夏回族自治州和政县城关镇，占地面积120亩，是陇东南高寒阴湿地区重要的款冬花（Tussilago farfara L.）生态种植示范基地。核心产品款冬酮含量≥0.18%，总黄酮含量≥1.5%，均显著超过《中国药典》标准（款冬酮≥0.10%、总黄酮≥1.0%），产品远销甘肃、宁夏、安徽等多地中药材市场。
+						</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							<span>二、寒地特色优势</span> &nbsp;
+						</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							1. 地理环境：北纬35°7′—35°32′，海拔2100-2300米，地处黄土高原与青藏高原过渡带，山地阴湿坡地资源丰富，契合款冬花生长习性。
+						</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							2. 气候条件：年均温5-6.1℃，无霜期130-150天，年降水量639mm，集中于7-9月，昼夜温差≥12℃，利于有效成分积累。
+						</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							3. 土壤特性：以垆土为主，pH值8.0-8.4，有机质含量≥2.5%，质地疏松透气，保水保肥能力强，排水性佳。
+						</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							4. 品质特征： &nbsp;
+						</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							&nbsp;&nbsp;&nbsp;<span>- - 花蕾肥壮饱满，呈长圆棒状，表面紫褐有光泽 &nbsp;</span>
+						</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							&nbsp;&nbsp;&nbsp;<span>- - 密被茸毛，断面白润，香气浓郁持久 &nbsp;</span>
+						</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							&nbsp;&nbsp;&nbsp;<span>- - 有效成分积累充分，药用价值突出</span>
+						</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							三、创新种植技术
+						</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							1. 精准栽培：
+						</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							-  仿野生林下套种模式，模拟自然生长环境
+						</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							-  智能水肥一体化灌溉，根据生长期精准调控
+						</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							2. 生态管理：
+						</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							- 有机肥替代率100%，采用羊粪、腐熟秸秆等农家肥
+						</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							- 以生物防治为主，利用苦参碱等生物农药防控病虫害
+						</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							3. 科学采收：
+						</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							- 12月中下旬花蕾未舒时采收，保证有效成分含量
+						</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							- 人工精细采摘结合分级筛选，减少机械损伤
+						</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							四、标准化建设
+						</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							1. 生产体系：
+						</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							-  建立“种植-田间管理-采收”全程电子档案，记录关键数据
+						</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							2. 加工仓储：
+						</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							- 建成标准化清洗、烘干生产线，实现无硫加工
+						</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							- 配备恒温恒湿仓储库，控制湿度≤12%，防止霉变
+						</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							3. 质量管控：
+						</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							- 引入二维码溯源系统，消费者可查询产地、检测报告等信息
+						</p>
+						<p class="MsoNormal" style="text-indent:24.0000pt;">
+							- 与第三方检测机构合作，每批次产品均通过农残、重金属检测
+						</p>
+					</div>
+
+
+				</div>
+			</div>
+
+
+
+
+
+
+
+
+
+		
+
+			<div style="height: 100px;"></div>
+			<script>
+				window.onload = function() {
+					// 初始化地图
+					var map = new AMap.Map('mapContainer', {
+						zoom: 12,
+						center: [103.36, 35.43]
+					});
+					// 添加标记点
+					var marker = new AMap.Marker({
+						position: [103.36, 35.43],
+						title: ''
+					});
+					map.add(marker);
+				};
+				$(document).ready(function() {
+					var collapsedHeight = 300;
+					$('.content-collapse').css('max-height', collapsedHeight + 'px');
+					$('.expand-toggle').on('click', function() {
+						var $collapseDiv = $('.content-collapse');
+						var $content = $('.content');
+						var $this = $(this);
+						if ($collapseDiv.hasClass('expanded')) {
+							$collapseDiv.removeClass('expanded').animate({
+								'max-height': collapsedHeight
+							}, 300);
+							$this.text('展开查看更多 ↓');
+						} else {
+							var fullHeight = $content.outerHeight();
+							$collapseDiv.addClass('expanded').animate({
+								'max-height': fullHeight
+							}, 300, function() {
+								$(this).css('max-height', 'none');
+							});
+							$this.text('收起内容 ↑');
+						}
+					});
+				});
+
+				layui.use(['jquery'], function() {
+					var $ = layui.jquery;
+					$(".m_t").click(function() {
+						var content = $(this).parent().find(".content");
+						var bracket = $(this).find(".bracket");
+						if (content.is(":visible")) {
+							content.hide();
+							bracket.removeClass("xz").html("&rangle;");
+						} else {
+							content.show();
+							bracket.addClass("xz");
+						}
+					});
+					$(".m_ts").click(function() {
+						var content = $(this).parent().parent().parent().find(".content-wrapper");
+						var bracket = $(this).find(".bracket");
+						if (content.is(":visible")) {
+							content.hide();
+							bracket.removeClass("xz").html("&rangle;");
+						} else {
+							content.show();
+							bracket.addClass("xz");
+						}
+					});
+				});
+
+				if (typeof layui !== 'undefined') {
+					layui.use(['jquery', 'layer'], function() {
+						var $ = layui.jquery;
+						var layer = layui.layer;
+						$(document).ready(function() {
+							var swipers = {
+								'land': new Swiper('#land .swiper-container', {
+									navigation: {
+										nextEl: '#land .swiper-button-next',
+										prevEl: '#land .swiper-button-prev'
+									},
+									observer: true,
+									observeParents: true,
+									autoHeight: true
+								}),
+								'soil': new Swiper('#soil .swiper-container', {
+									navigation: {
+										nextEl: '#soil .swiper-button-next',
+										prevEl: '#soil .swiper-button-prev'
+									},
+									observer: true,
+									observeParents: true,
+									autoHeight: true
+								}),
+								'water': new Swiper('#water .swiper-container', {
+									navigation: {
+										nextEl: '#water .swiper-button-next',
+										prevEl: '#water .swiper-button-prev'
+									},
+									observer: true,
+									observeParents: true,
+									autoHeight: true
+								}),
+								'air': new Swiper('#air .swiper-container', {
+									navigation: {
+										nextEl: '#air .swiper-button-next',
+										prevEl: '#air .swiper-button-prev'
+									},
+									observer: true,
+									observeParents: true,
+									autoHeight: true
+								}),
+								'zy_zyzp': new Swiper('#zy_zyzp .swiper-container', {
+									navigation: {
+										nextEl: '#zy_zyzp .swiper-button-next',
+										prevEl: '#zy_zyzp .swiper-button-prev'
+									},
+									observer: true,
+									observeParents: true,
+									autoHeight: true
+								}),
+								'zy_jyzm': new Swiper('#zy_jyzm .swiper-container', {
+									navigation: {
+										nextEl: '#zy_jyzm .swiper-button-next',
+										prevEl: '#zy_jyzm .swiper-button-prev'
+									},
+									observer: true,
+									observeParents: true,
+									autoHeight: true
+								}),
+								'zy_zyly': new Swiper('#zy_zyly .swiper-container', {
+									navigation: {
+										nextEl: '#zy_zyly .swiper-button-next',
+										prevEl: '#zy_zyly .swiper-button-prev'
+									},
+									observer: true,
+									observeParents: true,
+									autoHeight: true
+								}),
+								'zzxx_pic': new Swiper('#zzxx_pic .swiper-container', {
+									navigation: {
+										nextEl: '#zzxx_pic .swiper-button-next',
+										prevEl: '#zzxx_pic .swiper-button-prev'
+									},
+									observer: true,
+									observeParents: true,
+									autoHeight: true
+								}),
+								'nsgc_pic_216': new Swiper('#nsgc_pic_216 .swiper-container', {
+									navigation: {
+										nextEl: '#nsgc_pic_216 .swiper-button-next',
+										prevEl: '#nsgc_pic_216 .swiper-button-prev'
+									},
+									observer: true,
+									observeParents: true,
+									autoHeight: true
+								}),
+								'nsgc_pic_217': new Swiper('#nsgc_pic_217 .swiper-container', {
+									navigation: {
+										nextEl: '#nsgc_pic_217 .swiper-button-next',
+										prevEl: '#nsgc_pic_217 .swiper-button-prev'
+									},
+									observer: true,
+									observeParents: true,
+									autoHeight: true
+								}),
+								'nsgc_pic_218': new Swiper('#nsgc_pic_218 .swiper-container', {
+									navigation: {
+										nextEl: '#nsgc_pic_218 .swiper-button-next',
+										prevEl: '#nsgc_pic_218 .swiper-button-prev'
+									},
+									observer: true,
+									observeParents: true,
+									autoHeight: true
+								}),
+								'nsgc_pic_219': new Swiper('#nsgc_pic_219 .swiper-container', {
+									navigation: {
+										nextEl: '#nsgc_pic_219 .swiper-button-next',
+										prevEl: '#nsgc_pic_219 .swiper-button-prev'
+									},
+									observer: true,
+									observeParents: true,
+									autoHeight: true
+								}),
+								'nsgc_pic_220': new Swiper('#nsgc_pic_220 .swiper-container', {
+									navigation: {
+										nextEl: '#nsgc_pic_220 .swiper-button-next',
+										prevEl: '#nsgc_pic_220 .swiper-button-prev'
+									},
+									observer: true,
+									observeParents: true,
+									autoHeight: true
+								}),
+								'szjl_pic_159': new Swiper('#szjl_pic_159 .swiper-container', {
+									navigation: {
+										nextEl: '#szjl_pic_159 .swiper-button-next',
+										prevEl: '#szjl_pic_159 .swiper-button-prev'
+									},
+									observer: true,
+									observeParents: true,
+									autoHeight: true
+								}),
+								'szjl_pic_160': new Swiper('#szjl_pic_160 .swiper-container', {
+									navigation: {
+										nextEl: '#szjl_pic_160 .swiper-button-next',
+										prevEl: '#szjl_pic_160 .swiper-button-prev'
+									},
+									observer: true,
+									observeParents: true,
+									autoHeight: true
+								}),
+								'szjl_pic_161': new Swiper('#szjl_pic_161 .swiper-container', {
+									navigation: {
+										nextEl: '#szjl_pic_161 .swiper-button-next',
+										prevEl: '#szjl_pic_161 .swiper-button-prev'
+									},
+									observer: true,
+									observeParents: true,
+									autoHeight: true
+								}),
+								'csxx_pic_57': new Swiper('#csxx_pic_57 .swiper-container', {
+									navigation: {
+										nextEl: '#csxx_pic_57 .swiper-button-next',
+										prevEl: '#csxx_pic_57 .swiper-button-prev'
+									},
+									observer: true,
+									observeParents: true,
+									autoHeight: true
+								}),
+								'cjg_pic_56': new Swiper('#cjg_pic_56 .swiper-container', {
+									navigation: {
+										nextEl: '#cjg_pic_56 .swiper-button-next',
+										prevEl: '#cjg_pic_56 .swiper-button-prev'
+									},
+									observer: true,
+									observeParents: true,
+									autoHeight: true
+								}),
+
+								'glgx_pic_217': new Swiper('#glgx_pic_217 .swiper-container', {
+									navigation: {
+										nextEl: '#glgx_pic_217 .swiper-button-next',
+										prevEl: '#glgx_pic_217 .swiper-button-prev'
+									},
+									observer: true,
+									observeParents: true,
+									autoHeight: true
+								}),
+								'glgx_pic_218': new Swiper('#glgx_pic_218 .swiper-container', {
+									navigation: {
+										nextEl: '#glgx_pic_218 .swiper-button-next',
+										prevEl: '#glgx_pic_218 .swiper-button-prev'
+									},
+									observer: true,
+									observeParents: true,
+									autoHeight: true
+								}),
+								'glgx_pic_219': new Swiper('#glgx_pic_219 .swiper-container', {
+									navigation: {
+										nextEl: '#glgx_pic_219 .swiper-button-next',
+										prevEl: '#glgx_pic_219 .swiper-button-prev'
+									},
+									observer: true,
+									observeParents: true,
+									autoHeight: true
+								}),
+
+								'cjgrk_pic_55': new Swiper('#glgx_pic_55 .swiper-container', {
+									navigation: {
+										nextEl: '#glgx_pic_55 .swiper-button-next',
+										prevEl: '#glgx_pic_55 .swiper-button-prev'
+									},
+									observer: true,
+									observeParents: true,
+									autoHeight: true
+								}),
+
+								'cc_cktp55': new Swiper('#cc_cktp55 .swiper-container', {
+									navigation: {
+										nextEl: '#cc_cktp55 .swiper-button-next',
+										prevEl: '#cc_cktp55 .swiper-button-prev'
+									},
+									observer: true,
+									observeParents: true,
+									autoHeight: true
+								}),
+
+								'cc_qttp55': new Swiper('#cc_qttp55 .swiper-container', {
+									navigation: {
+										nextEl: '#cc_qttp55 .swiper-button-next',
+										prevEl: '#cc_qttp55 .swiper-button-prev'
+									},
+									observer: true,
+									observeParents: true,
+									autoHeight: true
+								}),
+							};
+
+							$(document).on('click', '.certificate-tabs .tab', function() {
+								var tab = $(this);
+								var container = tab.closest('.certificate-container');
+								var tabId = tab.data('tab');
+								container.find('.tab').removeClass('active');
+								tab.addClass('active');
+								container.find('.tab-panel').removeClass('active');
+								container.find('#' + tabId).addClass('active');
+								if (swipers[tabId]) {
+									setTimeout(function() {
+										swipers[tabId].update();
+										swipers[tabId].slideTo(0, 0);
+									}, 150);
+								}
+							});
+						});
+					});
+				}
+				layui.use(['jquery', 'layer'], function() {
+					var $ = layui.jquery;
+					var layer = layui.layer;
+					$(document).on('click', '.swiper-slide img', function(e) {
+						e.preventDefault();
+						e.stopPropagation();
+						var currentTabPanel = $(this).closest('.tab-panel');
+						var tabId = currentTabPanel.attr('id');
+						var images = [];
+						currentTabPanel.find('.swiper-slide img').each(function() {
+							images.push({
+								src: $(this).attr('src'),
+								alt: $(this).attr('alt') || '图片预览'
+							});
+						});
+						var currentIndex = currentTabPanel.find('.swiper-slide img').index(this);
+						layer.photos({
+							photos: {
+								title: '图片预览',
+								data: images
+							},
+							anim: 5,
+							start: currentIndex
+						});
+					});
+				});
+			</script>
+	</div>
+</html>
